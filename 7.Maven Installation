@@ -1,1 +1,21 @@
+Download the Maven Binaries
+
+cd ~/Downloads
+wget https://dlcdn.apache.org/maven/maven-3/3.9.1/binaries/apache-maven-3.9.1-bin.tar.gz
+tar -xvf apache-maven-3.9.1-bin.tar.gz
+sudo mv apache-maven-3.9.1 /opt/
+nano ~/.bashrc
+export PATH=$PATH:/opt/apache-maven-3.9.1/bin
+source ~/.bashrc
+mvn --version
+
+Guide for Supporting Multiple Versions of Java (8, 11, 14) in Your Maven Project
+
+Prerequisites:
+
+Installed Maven
+Installed multiple versions of Java
+
+Steps for Supporting Multiple Java Versions:
+
 https://dzone.com/articles/guide-for-supporting-multiple-versions-of-java-8-1
