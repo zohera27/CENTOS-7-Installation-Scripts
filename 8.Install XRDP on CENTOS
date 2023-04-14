@@ -1,0 +1,22 @@
+To Allow RDP on CENTOS
+
+Check if the EPEL repository is enabled on your system.
+EPEL (Extra Packages for Enterprise Linux) is a repository that provides additional software packages for CentOS.
+You can check if it is enabled by running the following command:
+
+sudo yum repolist
+
+If the EPEL repository is not listed, you can enable it by installing the epel-release package:
+
+sudo yum install epel-release
+
+Install XRDP:
+
+sudo yum install xrdp
+
+sudo firewall-cmd --zone=public --add-port=3389/tcp --permanent
+sudo firewall-cmd --reload
+
+sudo systemctl start xrdp
+sudo systemctl enable xrdp
+
