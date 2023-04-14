@@ -1,0 +1,26 @@
+Gradle is an open-source build automation system used primarily for Java projects. 
+It combines the best features of Ant and Maven. 
+Unlike its predecessors which use XML for scripting, Gradle uses Groovy , a dynamic, 
+object-oriented programming language for the Java platform to define the project and build scripts.
+
+The following sections provide information about how to install Gradle on CentOS 7. We’ll download the latest release of Gradle from their official website.
+Install OpenJDK
+Gradle requires Java JDK or JRE version 7 or above to be installed.
+Install the OpenJDK 8 package with the following command:
+sudo yum install java-1.8.0-openjdk-devel
+Verify the Java installation by printing the Java version :
+java -version
+Download Gradle
+At the time of writing this article, the latest version of Gradle is 8.1. Before continuing with the next step you should check the Gradle releases page to see if a newer version is available.
+Start by downloading the Gradle Binary-only zip file in the /tmp directory using the following wget command:
+cd ~/Downloads
+wget https://services.gradle.org/distributions/gradle-8.1-bin.zip
+sudo unzip gradle-8.1-bin.zip -d /opt/
+Verify that the Gradle files are extracted by listing the /opt/gradle/gradle-5.0 directory:
+ls /opt/gradle/gradle-8.1
+nano ~/.bashrc
+export PATH=$PATH:/opt/gradle-8.1/bin
+source ~/.bashrc
+Verify the Gradle installation
+To validate that Gradle is installed properly use the gradle -v command which will display the Gradle version:
+gradle -v
