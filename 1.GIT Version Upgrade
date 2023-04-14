@@ -1,0 +1,17 @@
+To upgrade the default version of Git on CentOS to 2.40, you can follow these steps:
+Install the required dependencies:
+sudo yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker
+Download the latest Git version from the official website:
+cd /usr/src
+sudo curl -LO https://www.kernel.org/pub/software/scm/git/git-2.40.0.tar.gz
+sudo tar xzf git-2.40.0.tar.gz
+Compile and install Git:
+cd git-2.40.0
+sudo make prefix=/usr/local/git all
+sudo make prefix=/usr/local/git install
+Add Git to your system's PATH variable:
+echo "export PATH=$PATH:/usr/local/git/bin" >> ~/.bashrc
+source ~/.bashrc
+Verify that Git is now at version 2.40:
+git --version
+sudo ln -sf /usr/local/git/bin/git /usr/bin/git
