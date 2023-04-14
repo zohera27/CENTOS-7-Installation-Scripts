@@ -19,3 +19,20 @@ Installed multiple versions of Java
 Steps for Supporting Multiple Java Versions:
 
 https://dzone.com/articles/guide-for-supporting-multiple-versions-of-java-8-1
+
+Important Point
+
+to use the configured toolchains.xml file when building your project with Maven, you need to pass the toolchain ID as a command-line argument to Maven.
+The toolchain ID is the ID attribute of the toolchain element you configured in the toolchains.xml file.
+
+For example, if you have configured a toolchain with the ID "jdk8" for Java 8 
+in your toolchains.xml file, you can build your project with that toolchain using the following command:
+
+$ /opt/apache-maven-3.9.1/bin/mvn -Pjdk8 clean install
+
+Here, "-P" option is used to specify the profile you want to activate. You can create a profile with the same ID as the toolchain ID to make things easier.
+
+Note that if you don't specify a toolchain ID, Maven will use the default toolchain, which is usually the highest version of Java installed on your system.
+So, it's important to specify the toolchain ID to make sure you are using the correct version of Java for your project.
+
+
