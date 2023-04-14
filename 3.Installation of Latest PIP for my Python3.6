@@ -1,0 +1,22 @@
+First, ensure that you have Python 2.7 and Python 3.6 installed on your system. You can check the versions of Python by running the following commands:
+python --version
+python3 --version
+Note - PIP version will only support on Python 3.6 greater >>> versions
+Next, download the pip installation script using the following commands for For Python 3.6:
+curl https://bootstrap.pypa.io/pip/3.6/get-pip.py -o get-pip.py
+sudo python3 get-pip.py
+Finally, verify that pip is installed and working correctly for Python 3.6 by running the following command:
+pip3 --version
+To make your Python 3.6 installation with pip 21.3.1 as the default on CentOS 7, you can follow these steps:
+Open the .bashrc file in your home directory using a text editor:
+nano ~/.bashrc
+Add the following lines at the end of the file:
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/lib/python3.6/site-packages/pip:$PATH
+These lines will add /usr/local/bin and /usr/local/lib/python3.6/site-packages/pip to your $PATH environment variable, 
+which will make the Python 3.6 version of pip and other executables installed in /usr/local/bin the default version
+Reload your .bashrc file by running the following command:
+source ~/.bashrc
+Verify that the correct versions of Python and pip are now the defaults by running the following commands:
+python3 --version
+pip3 --version
