@@ -1,0 +1,12 @@
+Here are the steps to install Terraform v1.4.5 on your CentOS 7 system using the Git version 2.40.0 that you installed earlier:
+First, ensure that you have Git version 2.40.0 installed on your system. You can check the version of Git by running the following command:
+git --version
+If the output shows version 2.40.0, then you have the correct version of Git installed. If not, you may need to follow the steps we discussed earlier to install Git version 2.40.0.
+Next, download the Terraform v1.4.5 binary for Linux from the official HashiCorp website using the following command:
+you can download under the Path cd ~/Downloads
+sudo curl -LO https://releases.hashicorp.com/terraform/1.4.5/terraform_1.4.5_linux_amd64.zip
+Optional - Install unzip if it is not already installed on your system. You can install it using the following command: sudo yum install unzip
+Extract the Terraform binary from the downloaded ZIP archive using the following command:
+sudo unzip terraform_1.4.5_linux_amd64.zip -d /usr/local/bin/
+terraform version
+This should output the version of Terraform you just installed (v1.4.5).
