@@ -1,0 +1,17 @@
+GIT Commands:
+git config --global user.name "zohera27"
+git config --global user.email "shazhar27@outlook.com"
+git config --list
+git init
+git add README.md
+git commit -m "My Java Application Files"
+git branch -m main
+git remote add origin https://github.com/zohera27/devops_Java_Project.git
+git remote set-url origin https://zohera27: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@github.com/zohera27/devops_Java_Project.git
+git remote rm origin
+git remote -v
+git push -u origin main
+git add .
+git commit -m
+git push origin main
+git config --global --add safe.directory /home/azhar27/Devops_Project/Jenkins_Shared_Library
