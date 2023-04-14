@@ -2,10 +2,17 @@ First, add the Jenkins repository to your system by importing its GPG key and cr
 cd /etc/yum.repos.d/
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 cd ~/Downloads
-sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 Install Java 11 which is required for Jenkins:
 sudo yum install java-11-openjdk
 also, you can install sudo yum install java-1.8.0-openjdk-devel
+Important Point - for jenkins installation your os should have default Java version runnig as 11 please follow step:
+sudo update-alternatives --config java 
+and select the Java 11
+nano ~/.bashrc
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.18.0.10-1.el7_9.x86_64
+source ~/.bashrc
+Java -version
 Install Jenkins:
 sudo yum install jenkins
 By default, Jenkins listens on the port you specified in the configuration file. If you are running a firewall on your system, 
@@ -21,7 +28,7 @@ JENKINS_PORT="8080"
 Note - After Changing the Port you have to run the above Firewall commands to allow incoming Traffic
 Start the Jenkins service and enable it to start automatically at boot time by running the following commands:
 sudo systemctl start jenkins
-sudo systemctl enable jenkin
+sudo systemctl enable jenkins
 Jenkins should now be running on your server. 
 You can access the Jenkins web interface by navigating to your server's IP address or domain name followed by port 8080 in your web browser:
 http://your-server-ip-or-domain-name:8080
