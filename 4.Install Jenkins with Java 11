@@ -1,0 +1,24 @@
+First, add the Jenkins repository to your system by importing its GPG key and creating a YUM repository file. You can do this by running the following commands:
+cd /etc/yum.repos.d/
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+cd ~/Downloads
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+Install Java 11 which is required for Jenkins:
+sudo yum install java-11-openjdk
+also, you can install sudo yum install java-1.8.0-openjdk-devel
+Install Jenkins:
+sudo yum install jenkins
+By default, Jenkins listens on the port you specified in the configuration file. If you are running a firewall on your system, 
+you will need to open this port to allow incoming traffic. You can do this by running the following command
+sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp
+(or)
+sudo firewall-cmd --add-port=8080/tcp --permanent
+sudo firewall-cmd --reload
+if you want to change the Port for Jenkins:
+sudo vi /etc/sysconfig/jenkins
+Find the line that starts with "JENKINS_PORT" and change the port number to the desired value. For example, to use port 9090, you would set the line to:
+JENKINS_PORT="8080"
+Note - After Changing the Port you have to run the above Firewall commands to allow incoming Traffic
+Start the Jenkins service and enable it to start automatically at boot time by running the following commands:
+sudo systemctl start jenkins
+sudo systemctl enable jenkin
