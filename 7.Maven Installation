@@ -102,7 +102,7 @@ In this example, we have two toolchains defined, one for JDK 1.8 and one for JDK
 
 mvn -t toolchain:jdk -Djdk-version=1.8 test
 mvn -Dmaven.toolchains.file=/path/to/toolchains.xml -Djdk-version=1.8 test
-
+mvn -t toolchain:jdk -Djdk-version=1.8 test
 
 The -Djdk-version=1.8 option specifies that Maven should use the toolchain that provides JDK version 1.8. Maven will then use the JDK 1.8 installation specified in the <jdkHome> element of the corresponding toolchain definition to build the project.
 
