@@ -22,3 +22,8 @@ Note - After Changing the Port you have to run the above Firewall commands to al
 Start the Jenkins service and enable it to start automatically at boot time by running the following commands:
 sudo systemctl start jenkins
 sudo systemctl enable jenkin
+Jenkins should now be running on your server. 
+You can access the Jenkins web interface by navigating to your server's IP address or domain name followed by port 8080 in your web browser:
+http://your-server-ip-or-domain-name:8080
+You'll be prompted to enter the initial admin password which can be found in the 
+/var/lib/jenkins/secrets/initialAdminPassword file
