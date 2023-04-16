@@ -1,0 +1,22 @@
+Trivy is a vulnerability scanner for containers. To install Trivy on CentOS, you can follow these steps:
+
+Open the terminal on your CentOS system.
+Add the Trivy repository to your system by running the following command:
+
+sudo rpm -ivh https://github.com/aquasecurity/trivy/releases/download/v0.19.2/trivy_0.19.2_Linux-64bit.rpm
+
+Note: You can replace the version number in the URL with the latest release version available on the Trivy GitHub releases page.
+
+Once the repository is added, update your system by running the following command:
+
+sudo yum update
+
+Install Trivy by running the following command:
+
+sudo yum install trivy
+
+Verify that Trivy is installed and working properly by running the following command:
+
+trivy --version
+
+This should display the version number of Trivy installed on your system. You can now use Trivy to scan your containers for vulnerabilities.
